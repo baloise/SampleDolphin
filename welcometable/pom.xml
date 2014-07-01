@@ -1,0 +1,105 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ch.basler.welcometable</groupId>
+  <artifactId>welcometable</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <modules>
+    <module>welcometable_admin</module>
+    <module>welcometable_jfxviewer</module>
+    <module>welcometable_server</module>
+    <module>welcometable_shared</module>
+    <module>welcometable_swingviewer</module>
+    <module>welcometable_jfxviewerng</module>
+    <module>welcometable_admingwt</module>
+  </modules>
+  
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.open-dolphin</groupId>
+        <artifactId>dolphin-server</artifactId>
+        <version>${dolphin-version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.open-dolphin</groupId>
+        <artifactId>dolphin-combined</artifactId>
+        <version>${dolphin-version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.open-dolphin</groupId>
+        <artifactId>dolphin-client</artifactId>
+        <version>${dolphin-version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.open-dolphin</groupId>
+        <artifactId>dolphin-client-javafx</artifactId>
+        <version>${dolphin-version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>javafx</groupId>
+        <artifactId>javafx</artifactId>
+        <version>2.1</version>
+        <scope>system</scope>
+        <systemPath>${java.home}/lib/jfxrt.jar</systemPath>
+      </dependency>
+
+      <dependency>
+        <groupId>ch.basler.welcometable</groupId>
+        <artifactId>welcometable_shared</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>ch.basler.welcometable</groupId>
+        <artifactId>welcometable_admin</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>ch.basler.welcometable</groupId>
+        <artifactId>welcometable_jfxviewer</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>ch.basler.welcometable</groupId>
+        <artifactId>welcometable_server</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      
+      <dependency>
+        <groupId>com.google.gwt</groupId>
+        <artifactId>gwt-servlet</artifactId>
+        <version>${gwt.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.gwt</groupId>
+        <artifactId>gwt-user</artifactId>
+        <version>${gwt.version}</version>
+
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <properties>
+    <dolphin-version>0.10</dolphin-version>
+    <gwt.version>2.5.1</gwt.version>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
+
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+</project>

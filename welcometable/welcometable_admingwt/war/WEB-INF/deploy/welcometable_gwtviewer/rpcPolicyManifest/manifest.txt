@@ -1,0 +1,2 @@
+# Module welcometable_gwtviewer
+# RPC service class, partial path of RPC policy file
