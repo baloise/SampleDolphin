@@ -72,7 +72,6 @@ public class WelcometableApplication extends Application {
 
     Pane root = PaneBuilder.create().children(vBoxLayout).build();
 
-    bindPresentationModel();
     addClientSideAction();
 
     Scene scene = new Scene(root, 300, 250);
@@ -90,12 +89,6 @@ public class WelcometableApplication extends Application {
 
     clientDolphin.send(Welcometable.CMD_SYNC, adapter);
 
-  }
-
-  private void bindPresentationModel() {
-    // JFXBinder.bind("text").of(textField).to(ATT_FIRSTNAME).of(textAttributeModel);
-    // JFXBinder.bind("text").of(textField).to(Welcometable.ATT_VIEW_TEXT).of(textAttributeModel);
-    // JFXBinder.bind(Welcometable.ATT_VIEW_TEXT).of(textAttributeModel).to("text").of(textField);
   }
 
   private void createPresentationModel() {

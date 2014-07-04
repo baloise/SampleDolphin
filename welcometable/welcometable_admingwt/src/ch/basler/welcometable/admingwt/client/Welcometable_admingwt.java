@@ -36,24 +36,6 @@ public class Welcometable_admingwt implements EntryPoint {
   @Override
   public void onModuleLoad() {
 
-    // VLayout vLayout = new VLayout();
-    // vLayout.setShowEdges(true);
-    // vLayout.setWidth(150);
-    // vLayout.setMembersMargin(5);
-    // vLayout.setLayoutMargin(10);
-    //
-    // IButton button = new IButton("Hello World");
-    // button.addClickHandler(new ClickHandler() {
-    //
-    // @Override
-    // public void onClick(ClickEvent event) {
-    // SC.say("Hello World from SmartGWT");
-    // }
-    // });
-    //
-    // vLayout.addMember(button);
-    // vLayout.draw();
-
     VerticalPanel vPanel = new VerticalPanel();
     for (int i = 0; i < Welcometable.DISPLAYROWS; i++) {
       TextBox box = new TextBox();
@@ -73,9 +55,6 @@ public class Welcometable_admingwt implements EntryPoint {
 
         clientDolphin.send(Welcometable.CMD_PUSH);
 
-        // for (int i = 0; i < Welcometable.DISPLAYROWS; i++) {
-        // textAttributeModel.getAt(Welcometable.ATT_VIEW_TEXT + i).rebase();
-        // }
       }
     });
 
@@ -94,16 +73,7 @@ public class Welcometable_admingwt implements EntryPoint {
         clientDolphin = dolphin.getClientDolphin();
 
         createPresentationModel();
-        // 2: Initialize PMs:
-        // PMContext pmContext = new PMContext().initialize(dolphin);
-        //
-        // // 3: Initialize View:
-        // MainView view = new MainView().initialize();
-        //
-        // // 4: Bind view and PMs:
-        // new Binder().bind(view, pmContext);
 
-        // bind 'textBox' to 'textAttribute' bidirectionally
         int i = 0;
         for (TextBox box : textBoxes) {
           final int row = i++;
@@ -114,12 +84,7 @@ public class Welcometable_admingwt implements EntryPoint {
               textAttributeModel.getAt(Welcometable.ATT_VIEW_TEXT + row).setValue(changedBox.getText());
             }
           });
-        } // for
-
-        //
-        // // 5: Load initial data into PMs:
-        // new PMLoader().load(pmContext);
-        // pmContext.sendCommand(PMConstants.CMD_LOAD_INITIAL);
+        }
       }
     });
   }

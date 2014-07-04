@@ -73,7 +73,6 @@ public class AdminApplication extends Application {
 
     root = PaneBuilder.create().children(vBoxLayout).build();
 
-    bindPresentationModel();
     addClientSideAction();
 
     Scene scene = new Scene(root, 300, 250);
@@ -82,19 +81,6 @@ public class AdminApplication extends Application {
 
     stage.show();
 
-    // final OnFinishedHandlerAdapter adapter = new OnFinishedHandlerAdapter() {
-    // @Override
-    // public void onFinished(List<ClientPresentationModel> presentationModels) {
-    // clientDolphin.send(Welcometable.CMD_POLL, this);
-    // }
-    // };
-    //
-    // clientDolphin.send(Welcometable.CMD_SYNC, new OnFinishedHandlerAdapter() {
-    // @Override
-    // public void onFinished(List<ClientPresentationModel> presentationModels) {
-    // clientDolphin.send(Welcometable.CMD_POLL, adapter);
-    // }
-    // });
   }
 
   private HBox createHBox(int row) {
@@ -109,12 +95,6 @@ public class AdminApplication extends Application {
     JFXBinder.bind(Welcometable.ATT_VIEW_TEXT + row).of(textAttributeModel).to("text").of(textField);
     fields.add(textField);
     return rowTextFields;
-  }
-
-  private void bindPresentationModel() {
-    // JFXBinder.bind("text").of(textField).to(ATT_FIRSTNAME).of(textAttributeModel);
-    // JFXBinder.bind("text").of(textField).to(Welcometable.ATT_VIEW_TEXT).of(textAttributeModel);
-    // JFXBinder.bind(Welcometable.ATT_VIEW_TEXT).of(textAttributeModel).to("text").of(textField);
   }
 
   private void createPresentationModel() {
