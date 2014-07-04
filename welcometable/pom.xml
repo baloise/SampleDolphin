@@ -10,7 +10,6 @@
     <module>welcometable_server</module>
     <module>welcometable_shared</module>
     <module>welcometable_swingviewer</module>
-    <module>welcometable_jfxviewerng</module>
     <module>welcometable_admingwt</module>
   </modules>
   

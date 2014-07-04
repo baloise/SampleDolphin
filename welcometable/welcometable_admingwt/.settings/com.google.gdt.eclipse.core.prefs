@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
 jarsExcludedFromWebInfLib=
+lastWarOutDir=C\:/Users/Public/dev/git/SampleDolphin/welcometable/welcometable_admingwt/war
 warSrcDir=war
-warSrcDirIsOutput=false
+warSrcDirIsOutput=true
